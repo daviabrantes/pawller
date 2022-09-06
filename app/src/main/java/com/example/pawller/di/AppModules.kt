@@ -2,6 +2,8 @@ package com.example.pawller.di
 
 import androidx.room.Room
 import com.example.pawller.data.DogDatabase
+import com.example.pawller.data.repositories.DogRepository
+import com.example.pawller.ui.viewmodels.DogViewModel
 import com.example.pawller.utils.Constants.DATABASE_NAME
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
@@ -20,9 +22,9 @@ val appModule = module {
 
             single { database.dogDao() }
 
-            //single { DogRepository(get()) }
+            single { DogRepository(get()) }
 
-            //single { DogViewModel(get()) }
+            single { DogViewModel(get()) }
         }
     }
 }

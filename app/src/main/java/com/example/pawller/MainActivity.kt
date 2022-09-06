@@ -3,22 +3,18 @@ package com.example.pawller
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import com.example.pawller.ui.theme.PawllerTheme
+import com.example.pawller.ui.viewmodels.DogViewModel
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 @OptIn(ExperimentalAnimationApi::class)
 class MainActivity : ComponentActivity() {
+
     private lateinit var navController: NavHostController
+    private val viewModel by viewModel<DogViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
