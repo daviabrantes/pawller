@@ -5,6 +5,8 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import com.example.pawller.navigation.destinations.SplashScreen
 
 @ExperimentalAnimationApi
 @ExperimentalMaterialApi
@@ -15,19 +17,10 @@ fun SetupNavGraph(navController: NavHostController) {
         startDestination = Screen.Splash.route
     ) {
 
-//        composable(route = Screen.Splash.route) {
-//            SplashScreen(navController = navController)
-//        }
-//        composable(route = Screen.Home.route) {
-//            Box(
-//                modifier = Modifier
-//                    .fillMaxSize()
-//                    .background(Color.White),
-//                contentAlignment = Alignment.Center
-//            ) {
-//                Text(text = "Hello World", color = Color.Black)
-//            }
-//        }
-//    }
+        composable(route = Screen.Splash.route) {
+            SplashScreen(navController = navController)
+        }
+        composable(route = Screen.Home.route) {
+        }
     }
 }
